@@ -29,16 +29,18 @@ class App < Sinatra::Base
 
   get '/:operation/:number1/:number2' do
     if params[:operation] == "add"
-      @operation = "+"
+      @operator = "+"
     elsif params[:operation] == "subtract"
-      @operation = "-"
+      @operator = "-"
     elsif params[:operation] == "divide"
-      @operation = "/"
+      @operator = "/"
     elsif params[:operation] == "multiply"
-      @operation = "*"
+      @operator = "*"
     end
+    @operation = eval("#{@number1 )
     @number1 = params[:number1].to_i
     @number2 = params[:number2].to_i
-    "#{eval("#{@number1 @operation @number2}")}"
+
+    "#{@operation}"
   end
 end
