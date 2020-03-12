@@ -37,10 +37,9 @@ class App < Sinatra::Base
     elsif params[:operation] == "multiply"
       @operator = "*"
     end
-    @operation = eval("#{@number1} #{@operator} #{@number2}")
     @number1 = params[:number1].to_i
     @number2 = params[:number2].to_i
-
+    @operation = eval("#{@number1} #{@operator} #{@number2}")
     "#{@operation}"
   end
 end
